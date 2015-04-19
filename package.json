@@ -4,8 +4,9 @@
   "description": "A guide on how to TDD React components",
   "main": "index.js",
   "scripts": {
+    "basics": "mocha -r ./lib/jsdom.js  --compilers jsx:jsx-require-extension basics/test",
     "lint": "eslint basics/lib/*.jsx basics/test/*.spec.js",
-    "test": "npm run lint && mocha -r ./lib/jsdom.js  --compilers jsx:jsx-require-extension basics/test"
+    "test": "npm run lint && npm run basics"
   },
   "repository": {
     "type": "git",
