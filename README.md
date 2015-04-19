@@ -7,7 +7,9 @@ A series of examples on how to TDD React
 2. install io.js: `nvm install io.js`
    * Why? The latest versions of jsdom only work with io.js. jsdom allows us to test without a brower and a test runner.
 3. Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
-4. If using Webstorm, when configuring the mocha run configuration, add the following under "Extra Mocha options": `-r ./lib/jsdom.js  --compilers jsx:jsx-require-extension`
+4. `git clone` ...
+5. `npm i`
+6. If using Webstorm, when configuring the mocha run configuration, add the following under "Extra Mocha options": `-r ./lib/jsdom.js  --compilers jsx:jsx-require-extension`
 
 ## How to use this guide
 
@@ -28,11 +30,13 @@ Looking at the history for each section will show you only the steps needed to d
 
 * [Basics](https://github.com/zpratt/react-tdd-guide/commits/master/basics) - Steps for TDD'ing the simplest of React components: An unordered list with no items. Start here if you're not familiar with TDD'ing React and want to see a simple introduction.
 
-## Running tests
+## Running the tests for a section
 
-1. `git clone` ...
-2. `npm i`
-3. `npm test`
+* `npm run <section name>`
+
+## Running all tests
+
+* `npm test`
 
 ## Contributing
 
