@@ -25,7 +25,9 @@
     "chai": "^2.2.0",
     "eslint": "^0.19.0",
     "jsdom": "^5.0.1",
-    "mocha": "^2.2.4"
+    "jsx-require-extension": "^0.2.0",
+    "mocha": "^2.2.4",
+    "proxyquire": "^1.4.0"
   },
   "dependencies": {
     "react": "^0.13.2"
