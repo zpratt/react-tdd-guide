@@ -6,7 +6,7 @@ var RootComponent = require('../lib/root-component.jsx'),
 
 describe('Root Component', function () {
     beforeEach(function () {
-        var RootElement = React.createElement(RootComponent);
+        React.createElement(RootComponent);
     });
 
     it('should be a unordered list', function () {
