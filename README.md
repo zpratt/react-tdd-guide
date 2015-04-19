@@ -5,7 +5,7 @@ A series of examples on how to TDD React
 
 1. install [nvm](https://github.com/creationix/nvm)
 2. install io.js: `nvm install io.js`
-   * Why io.js instead of node.js? The latest versions of jsdom only work with io.js. jsdom allows us to test without a brower and a test runner. Pre-4.x versions of jsdom, which run on node.js require contextify, which is a pain to setup on a windows machine.
+   * Why io.js instead of node.js? The latest versions of jsdom only work with io.js. jsdom allows us to test without a browser and a test runner. Pre-4.x versions of jsdom, which run on node.js require contextify, which is a pain to setup on a windows machine.
 3. Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
 4. `git clone` ...
 5. `npm i`
@@ -22,7 +22,7 @@ Looking at the history for each section will show you only the steps needed to d
 ## Philosphy
 
 * Avoid the need for runners and browsers
-  * Acheived by using mocha, jsdom, and [my jsdom helper](https://github.com/zpratt/react-tdd-guide/blob/master/lib/jsdom.js)
+  * Achieved by using mocha, jsdom, and [my jsdom helper](https://github.com/zpratt/react-tdd-guide/blob/master/lib/jsdom.js)
 * Use a mostly mockist approach
   * Achieved using proxyquire and sinon
 
@@ -52,4 +52,4 @@ Use a pull request for
 
 ## Caveats
 
-I am not a windows user, therefore this has only been tested on OSX. I am using jsdom to avoid depending on a browser and a runner, consequently, you'll need to install io.js. This should make things easier on windows users than this would have been pre-jsdom 4.x.
+I am not a windows user, therefore this has only been tested on OSX.
