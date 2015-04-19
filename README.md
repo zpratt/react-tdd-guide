@@ -9,6 +9,10 @@ A series of examples on how to TDD React
 3. Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
 4. If using Webstorm, when configuring the mocha run configuration, add the following under "Extra Mocha options": `-r ./lib/jsdom.js  --compilers jsx:jsx-require-extension`
 
+## How to use this guide
+
+Each section is broken out into its own folder, starting with [basics](https://github.com/zpratt/react-tdd-guide/tree/master/basics). What you'll find there is the finished example. I am experimenting with using the [commit history](https://github.com/zpratt/react-tdd-guide/commits/master/basics) and comments to drive the guide itself. Feedback on whether this works or not would be appreciated.
+
 ## Philosphy
 
 * Avoid the need for runners and browsers
@@ -16,7 +20,7 @@ A series of examples on how to TDD React
 * Use a mostly mockist approach
   * Achieved using proxyquire and sinon
 
-## Layout
+## Table of Contents
 
 * [Basics](https://github.com/zpratt/react-tdd-guide/commits/master/basics) - Steps for TDD'ing the simplest of React components: An unordered list with no items. Start here if you're not familiar with TDD'ing React and want to see a simple introduction.
 
