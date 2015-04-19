@@ -4,7 +4,8 @@
   "description": "A guide on how to TDD React components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint basics/lib/*.jsx basics/test/*.spec.js",
+    "test": "npm run lint && mocha -r ./lib/jsdom.js  --compilers jsx:jsx-require-extension basics/test"
   },
   "repository": {
     "type": "git",
