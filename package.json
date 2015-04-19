@@ -1,0 +1,33 @@
+{
+  "name": "react-tdd-guide",
+  "version": "1.0.0",
+  "description": "A guide on how to TDD React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpratt/react-tdd-guide.git"
+  },
+  "keywords": [
+    "react",
+    "tdd",
+    "guide"
+  ],
+  "author": "zach pratt <zach@attackofzach.com> (http://attackofzach.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zpratt/react-tdd-guide/issues"
+  },
+  "homepage": "https://github.com/zpratt/react-tdd-guide",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "eslint": "^0.19.0",
+    "jsdom": "^5.0.1",
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "react": "^0.13.2"
+  }
+}
