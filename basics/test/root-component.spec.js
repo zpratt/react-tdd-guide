@@ -3,7 +3,9 @@
 var RootComponent = require('../lib/root-component.jsx'),
 
     React = require('react'),
-    ReactTestUtils = require('react/lib/ReactTestUtils');
+    ReactTestUtils = require('react/lib/ReactTestUtils'),
+
+    expect = require('chai').expect;
 
 describe('Root Component', function () {
     var rootElement;
@@ -13,6 +15,9 @@ describe('Root Component', function () {
     });
 
     it('should be a unordered list', function () {
-        ReactTestUtils.renderIntoDocument(rootElement);
+        var renderedRootElement = ReactTestUtils.renderIntoDocument(rootElement),
+            renderedDOMNode = renderedRootElement.getDOMNode();
+
+        expect(renderedDOMNode.tagName).to.equal('UL');
     });
 });
