@@ -5,7 +5,7 @@ A series of examples on how to TDD React
 
 1. install [nvm](https://github.com/creationix/nvm)
 2. install io.js: `nvm install io.js`
-   * Why? The latest versions of jsdom only work with io.js. jsdom allows us to test without a brower and a test runner.
+   * Why io.js instead of node.js? The latest versions of jsdom only work with io.js. jsdom allows us to test without a brower and a test runner. Pre-4.x versions of jsdom, which run on node.js require contextify, which is a pain to setup on a windows machine.
 3. Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
 4. `git clone` ...
 5. `npm i`
