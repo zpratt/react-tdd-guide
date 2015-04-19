@@ -26,6 +26,18 @@ A series of examples on how to TDD React
 2. `npm i`
 3. `npm test`
 
+## Contributing
+
+Please feel free to open an issue for:
+
+* A question on how to do something
+* A request for further clarification
+
+Use a pull request for
+
+* Suggestions on changing how something is tested
+* To add an example you think would be valuable
+
 ## Caveats
 
 I am not a windows user, therefore this has only been tested on OSX. I am using jsdom to avoid depending on a browser and a runner, consequently, you'll need to install io.js. This should make things easier on windows users than this would have been pre-jsdom 4.x.
