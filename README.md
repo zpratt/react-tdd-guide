@@ -13,6 +13,10 @@ A series of examples on how to TDD React
 
 Each section is broken out into its own folder, starting with [basics](https://github.com/zpratt/react-tdd-guide/tree/master/basics). What you'll find there is the finished example. I am experimenting with using the [commit history](https://github.com/zpratt/react-tdd-guide/commits/master/basics) and comments to drive the guide itself. Feedback on whether this works or not would be appreciated.
 
+Each commit that is suffixed with **"- red"** can be checked out separately to examine the failing test. Each commit that is suffixed with **"- green"** shows how I finally passed the failing assertion.
+
+Looking at the history for each section will show you only the steps needed to drive that part of the application.
+
 ## Philosphy
 
 * Avoid the need for runners and browsers
