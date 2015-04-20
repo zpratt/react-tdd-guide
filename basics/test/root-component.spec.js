@@ -43,21 +43,33 @@ describe('Root Component', function () {
     describe('when the list is rendered with a set of users', function () {
         var rootElementWithItems,
             renderedElementWithItems,
-            expectedNumberOfItems;
+            listItems,
+            expectedNumberOfItems,
+            dummyUsers;
 
         beforeEach(function () {
             expectedNumberOfItems = randomInt(20, 30);
+            dummyUsers = generateDummyItems(expectedNumberOfItems);
 
             rootElementWithItems = React.createElement(RootComponent, {
-                users: generateDummyItems(expectedNumberOfItems)
+                users: dummyUsers
             });
+
             renderedElementWithItems = ReactTestUtils.renderIntoDocument(rootElementWithItems);
+            listItems = ReactTestUtils.scryRenderedDOMComponentsWithTag(renderedElementWithItems, 'LI');
         });
 
         it('should render an LI for each of the items', function () {
-            var listItems = ReactTestUtils.scryRenderedDOMComponentsWithTag(renderedElementWithItems, 'LI');
-
             expect(listItems).to.have.length(expectedNumberOfItems);
+        });
+
+        it('should include the name of the user in each item', function () {
+            listItems.forEach(function (listItemElement, index) {
+                var listItemNode = listItemElement.getDOMNode(),
+                    dummyUser = dummyUsers[index].name;
+
+                expect(listItemNode.textContent).to.equal(dummyUser);
+            });
         });
     });
 });
