@@ -20,13 +20,17 @@ function generateDummyItems(number) {
             name: '' + randomInt(10, 50)
         });
     }
+
+    return items;
 }
 
 describe('Root Component', function () {
     var rootElement;
 
     beforeEach(function () {
-        rootElement = React.createElement(RootComponent);
+        rootElement = React.createElement(RootComponent, {
+            users: []
+        });
     });
 
     it('should be a unordered list', function () {
@@ -51,7 +55,9 @@ describe('Root Component', function () {
         });
 
         it('should render an LI for each of the items', function () {
-            ReactTestUtils.findRenderedDOMComponentWithTag(renderedElementWithItems, 'LI');
+            var listItems = ReactTestUtils.scryRenderedDOMComponentsWithTag(renderedElementWithItems, 'LI');
+
+            expect(listItems).to.have.length(expectedNumberOfItems);
         });
     });
 });
