@@ -28,7 +28,7 @@ Looking at the history for each section will show you only the steps needed to d
 
 ## Table of Contents
 
-* [Basics](https://github.com/zpratt/react-tdd-guide/commits/master/basics) - Steps for TDD'ing the simplest of React components: An unordered list with no items. Start here if you're not familiar with TDD'ing React and want to see a simple introduction.
+* [Basics](https://github.com/zpratt/react-tdd-guide/commits/master/basics) - Steps for TDD'ing the simplest of React components: An unordered list of items. Start here if you're not familiar with TDD'ing React and want to see a simple introduction.
 
 ## Running the tests for a section
 
