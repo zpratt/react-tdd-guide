@@ -6,7 +6,11 @@ module.exports = React.createClass({
     render: function () {
         return (
             <ul>
-                <li />
+                {this.props.users.map(function () {
+                    return (
+                        <li />
+                    );
+                })}
             </ul>
         );
     }
