@@ -35,7 +35,7 @@ describe('Root Component', function () {
 
     it('should be a unordered list', function () {
         var renderedRootElement = ReactTestUtils.renderIntoDocument(rootElement),
-            renderedDOMNode = renderedRootElement.getDOMNode();
+            renderedDOMNode = React.findDOMNode(renderedRootElement);
 
         expect(renderedDOMNode.tagName).to.equal('UL');
     });
@@ -65,7 +65,7 @@ describe('Root Component', function () {
 
         it('should include the name of the user in each item', function () {
             listItems.forEach(function (listItemElement, index) {
-                var listItemNode = listItemElement.getDOMNode(),
+                var listItemNode = React.findDOMNode(listItemElement),
                     dummyUser = dummyUsers[index].name;
 
                 expect(listItemNode.textContent).to.equal(dummyUser);
