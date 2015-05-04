@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "basics": "mocha -r ./lib/jsdom.js  --compilers jsx:jsx-require-extension basics/test",
+    "examples": "webpack examples/basics/lib/index.jsx examples/basics/dist/basics.js",
     "lint": "eslint basics/lib/*.jsx basics/test/*.spec.js",
+    "start": "npm run examples && webpack-dev-server",
     "test": "npm run lint && npm run basics"
   },
   "repository": {
@@ -27,9 +29,12 @@
     "chai": "^2.2.0",
     "eslint": "^0.19.0",
     "jsdom": "^5.0.1",
+    "jsx-loader": "^0.13.2",
     "jsx-require-extension": "^0.2.0",
     "mocha": "^2.2.4",
-    "proxyquire": "^1.4.0"
+    "proxyquire": "^1.4.0",
+    "webpack": "^1.8.11",
+    "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
     "react": "^0.13.2"
