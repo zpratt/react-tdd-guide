@@ -18,5 +18,6 @@ describe('Button Dropdown', function () {
         renderedNode = React.findDOMNode(renderedElement);
 
         expect(renderedNode.tagName).to.equal('BUTTON');
+        expect(renderedNode.type).to.equal('button');
     });
 });
