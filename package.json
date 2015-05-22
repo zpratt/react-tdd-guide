@@ -29,7 +29,8 @@
     "jsdom": "^5.0.1",
     "jsx-require-extension": "^0.2.0",
     "mocha": "^2.2.4",
-    "proxyquire": "^1.4.0"
+    "proxyquire": "^1.4.0",
+    "sinon": "^1.14.1"
   },
   "dependencies": {
     "react": "^0.13.2"
