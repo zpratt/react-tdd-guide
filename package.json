@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "basics": "mocha -r ./lib/jsdom.js --compilers jsx:jsx-require-extension */test",
-    "lint": "eslint basics/lib/*.jsx basics/test/*.spec.js",
+    "lint": "eslint */lib/*.jsx */test/*.spec.js",
     "test": "npm run lint && npm run basics"
   },
   "repository": {
