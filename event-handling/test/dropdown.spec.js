@@ -1,6 +1,7 @@
 'use strict';
 
 var DropdownComponent = require('../lib/dropdown-component.jsx'),
+    ButtonDropdownComponent = require('../lib/button-dropdown-component.jsx'),
 
     React = require('react'),
     ReactTestUtils = require('react/lib/ReactTestUtils'),
@@ -9,18 +10,24 @@ var DropdownComponent = require('../lib/dropdown-component.jsx'),
 
 describe('Dropdown', function () {
     var dropdownElement,
-        renderedElement,
-        renderedNode;
+        buttonDropdownElement,
+        renderedDropdown;
 
     beforeEach(function () {
+        var shallowRenderer;
         dropdownElement = React.createElement(DropdownComponent);
+        buttonDropdownElement = React.createElement(ButtonDropdownComponent);
 
-        renderedElement = ReactTestUtils.renderIntoDocument(dropdownElement);
-
-        renderedNode = React.findDOMNode(renderedElement);
+        shallowRenderer = ReactTestUtils.createRenderer();
+        shallowRenderer.render(dropdownElement);
+        renderedDropdown = shallowRenderer.getRenderOutput();
     });
 
     it('should be a div', function () {
-        expect(renderedNode.tagName).to.equal('DIV');
+        expect(renderedDropdown.type).to.equal('div');
+    });
+
+    it('should contain the button dropdown', function () {
+        expect(renderedDropdown.props.children).to.eql(buttonDropdownElement);
     });
 });
