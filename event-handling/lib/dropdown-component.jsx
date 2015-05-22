@@ -1,12 +1,14 @@
 'use strict';
 
-var React = require('react');
+var ButtonDropdown = require('./button-dropdown-component.jsx'),
+
+    React = require('react');
 
 module.exports = React.createClass({
     render: function () {
         return (
             <div>
-                <div />
+                <ButtonDropdown />
             </div>
         );
     }
