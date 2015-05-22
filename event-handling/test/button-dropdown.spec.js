@@ -8,9 +8,15 @@ var ButtonDropdownComponent = require('../lib/button-dropdown-component.jsx'),
     expect = require('chai').expect;
 
 describe('Button Dropdown', function () {
-    it('should return something when rendering', function () {
-        var buttonDropdownElement = React.createElement(ButtonDropdownComponent);
+    it('should be a button', function () {
+        var buttonDropdownElement = React.createElement(ButtonDropdownComponent),
+            renderedElement,
+            renderedNode;
 
-        ReactTestUtils.renderIntoDocument(buttonDropdownElement);
+        renderedElement = ReactTestUtils.renderIntoDocument(buttonDropdownElement);
+
+        renderedNode = React.findDOMNode(renderedElement);
+
+        expect(renderedNode.tagName).to.equal('BUTTON');
     });
 });
