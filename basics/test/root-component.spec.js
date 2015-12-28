@@ -72,6 +72,14 @@ describe('Root Component', function () {
             });
         });
 
+        it('should key each element in the list', function () {
+            listItems.forEach(function (listItemElement, index) {
+                var expectedKey = index.toString();
+
+                expect(listItemElement.key).to.equal(expectedKey);
+            });
+        });
+
         it('should include the name of the user in each item', function () {
             listItems.forEach(function (listItemElement, index) {
                 var dummyUser = dummyUsers[index].name;

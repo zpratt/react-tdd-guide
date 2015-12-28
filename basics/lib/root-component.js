@@ -5,7 +5,7 @@ export default props => {
 
     return (
         <ul>
-            {users.map(user => <li>{user.name}</li>)}
+            {users.map((user, index) => <li key={index}>{user.name}</li>)}
         </ul>
     );
 
