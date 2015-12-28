@@ -22,7 +22,7 @@ Looking at the history for each section will show you only the steps needed to d
 * Avoid the need for runners and browsers
   * Achieved by using mocha, jsdom, and [my jsdom helper](https://github.com/zpratt/react-tdd-guide/blob/master/lib/jsdom.js)
 * Use a mostly mockist approach
-  * Achieved using proxyquire and sinon
+  * Achieved using shallow rendering (from the react test utils package) and sinon
 
 ## Table of Contents
 
