@@ -3,21 +3,22 @@
 var ButtonDropdownComponent = require('../lib/button-dropdown-component'),
 
     React = require('react'),
-    ReactTestUtils = require('react/lib/ReactTestUtils'),
+    ReactTestUtils = require('react-addons-test-utils'),
 
     sinon = require('sinon'),
     expect = require('chai').expect;
 
 describe('Button Dropdown', function () {
     var buttonDropdownElement,
-        renderedElement,
-        renderedNode,
+        renderedDropdown,
 
         parentEventHandler,
 
         sandbox;
 
     beforeEach(function () {
+        var shallowRenderer;
+
         sandbox = sinon.sandbox.create();
         parentEventHandler = sandbox.stub();
 
@@ -25,9 +26,9 @@ describe('Button Dropdown', function () {
             buttonSelected: parentEventHandler
         });
 
-        renderedElement = ReactTestUtils.renderIntoDocument(buttonDropdownElement);
-
-        renderedNode = React.findDOMNode(renderedElement);
+        shallowRenderer = ReactTestUtils.createRenderer();
+        shallowRenderer.render(buttonDropdownElement);
+        renderedDropdown = shallowRenderer.getRenderOutput();
     });
 
     afterEach(function () {
@@ -35,12 +36,11 @@ describe('Button Dropdown', function () {
     });
 
     it('should be a button', function () {
-        expect(renderedNode.tagName).to.equal('BUTTON');
-        expect(renderedNode.type).to.equal('button');
+        expect(renderedDropdown.type).to.equal('button');
     });
 
     it('should notify a consumer that the button was clicked', function () {
-        ReactTestUtils.Simulate.click(renderedNode);
+        renderedDropdown.props.onClick();
 
         sinon.assert.calledOnce(parentEventHandler);
     });

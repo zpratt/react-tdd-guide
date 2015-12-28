@@ -4,7 +4,7 @@ var DropdownComponent = require('../lib/dropdown-component'),
     ButtonDropdownComponent = require('../lib/button-dropdown-component'),
 
     React = require('react'),
-    ReactTestUtils = require('react/lib/ReactTestUtils'),
+    ReactTestUtils = require('react-addons-test-utils'),
 
     expect = require('chai').expect;
 
@@ -15,6 +15,7 @@ describe('Dropdown', function () {
 
     beforeEach(function () {
         var shallowRenderer;
+
         dropdownElement = React.createElement(DropdownComponent);
         buttonDropdownElement = React.createElement(ButtonDropdownComponent);
 
