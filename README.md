@@ -4,12 +4,10 @@ A series of examples on how to TDD React
 ## Getting started
 
 1. install [nvm](https://github.com/creationix/nvm)
-2. install io.js: `nvm install`
-   * Why io.js instead of node.js? The latest versions of jsdom only work with io.js. jsdom allows us to test without a browser and a test runner. Pre-4.x versions of jsdom, which run on node.js require contextify, which is a pain to setup on a windows machine.
-3. Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
-4. `git clone` ...
-5. `npm i`
-6. If using Webstorm, when configuring the mocha run configuration, add the following under "Extra Mocha options": `-r ./lib/jsdom.js  --compilers jsx:jsx-require-extension`
+- Grab an editor or IDE. I recommend Webstorm, Atom, and VIM, in that order.
+- `git clone` ...
+- `nvm install 4` OR if v4 of node.js is installed, `nvm use`
+- `npm i`
 
 ## How to use this guide
 
