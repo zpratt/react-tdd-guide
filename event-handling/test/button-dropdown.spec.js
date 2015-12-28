@@ -1,12 +1,9 @@
-'use strict';
+import ButtonDropdownComponent from '../lib/button-dropdown-component';
 
-var ButtonDropdownComponent = require('../lib/button-dropdown-component'),
-
-    React = require('react'),
-    ReactTestUtils = require('react-addons-test-utils'),
-
-    sinon = require('sinon'),
-    expect = require('chai').expect;
+import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
+import {expect} from 'chai';
+import sinon from 'sinon';
 
 describe('Button Dropdown', function () {
     var buttonDropdownElement,

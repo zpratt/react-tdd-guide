@@ -1,11 +1,8 @@
-'use strict';
+import RootComponent from '../lib/root-component';
 
-var RootComponent = require('../lib/root-component'),
-
-    React = require('react'),
-    ReactTestUtils = require('react-addons-test-utils'),
-
-    expect = require('chai').expect;
+import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
+import {expect} from 'chai';
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;

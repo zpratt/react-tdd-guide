@@ -1,17 +1,12 @@
-'use strict';
+import React from 'react';
 
-var React = require('react');
+export default props => {
+    const {users} = props;
 
-module.exports = React.createClass({
-    render: function () {
-        return (
-            <ul>
-                {this.props.users.map(function (user) {
-                    return (
-                        <li>{user.name}</li>
-                    );
-                })}
-            </ul>
-        );
-    }
-});
+    return (
+        <ul>
+            {users.map(user => <li>{user.name}</li>)}
+        </ul>
+    );
+
+};
