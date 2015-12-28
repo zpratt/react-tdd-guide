@@ -1,6 +1,6 @@
 'use strict';
 
-var RootComponent = require('../lib/root-component.jsx'),
+var RootComponent = require('../lib/root-component'),
 
     React = require('react'),
     ReactTestUtils = require('react/lib/ReactTestUtils'),

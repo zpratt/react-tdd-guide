@@ -1,7 +1,7 @@
 'use strict';
 
-var DropdownComponent = require('../lib/dropdown-component.jsx'),
-    ButtonDropdownComponent = require('../lib/button-dropdown-component.jsx'),
+var DropdownComponent = require('../lib/dropdown-component'),
+    ButtonDropdownComponent = require('../lib/button-dropdown-component'),
 
     React = require('react'),
     ReactTestUtils = require('react/lib/ReactTestUtils'),

@@ -1,6 +1,6 @@
 'use strict';
 
-var ButtonDropdown = require('./button-dropdown-component.jsx'),
+var ButtonDropdown = require('./button-dropdown-component'),
 
     React = require('react');
 

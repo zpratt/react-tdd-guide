@@ -9,7 +9,6 @@
         "es6": true
     },
     "ecmaFeatures": {
-        "modules": true,
         "jsx": true
     },
     "rules": {
@@ -19,14 +18,14 @@
         "no-bitwise": 2,
         "no-catch-shadow": 2,
         "no-console": 2,
-        "no-comma-dangle": 2,
+        "comma-dangle": 2,
         "no-control-regex": 2,
         "no-debugger": 2,
         "no-div-regex": 2,
         "no-dupe-keys": 2,
         "no-else-return": 2,
         "no-empty": 2,
-        "no-empty-class": 2,
+        "no-empty-character-class": 2,
         "no-eq-null": 2,
         "no-eval": 2,
         "no-ex-assign": 2,
@@ -64,7 +63,7 @@
         "no-proto": 2,
         "no-iterator": 2,
         "no-mixed-requires": [0, false],
-        "no-wrap-func": 2,
+        "no-extra-parens": 0,
         "no-shadow": 2,
         "no-use-before-define": 2,
         "no-redeclare": 2,
@@ -76,7 +75,6 @@
         "curly": 2,
         "dot-notation": 2,
         "eqeqeq": 2,
-        "global-strict": 0,
         "guard-for-in": 0,
         "max-depth": [0, 4],
         "max-len": [0, 80, 4],
@@ -89,15 +87,15 @@
         "quote-props": 0,
         "radix": 0,
         "semi": 2,
-        "space-after-keywords": [2, "always", { "checkFunctionKeyword": true } ],
+        "space-after-keywords": [2, "always"],
         "space-before-blocks": [2, "always"],
         "space-in-parens": [2, "never"],
-        "strict": 2,
+        "strict": [2, "global"],
         "unnecessary-strict": 0,
         "use-isnan": 2,
         "valid-typeof": 0,
         "wrap-iife": 2,
         "wrap-regex": 0,
-        "yoda": "always"
+        "yoda": [2, "always"]
     }
 }
