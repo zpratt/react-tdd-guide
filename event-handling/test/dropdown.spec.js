@@ -2,30 +2,23 @@ import DropdownComponent from '../lib/dropdown-component';
 import ButtonDropdownComponent from '../lib/button-dropdown-component';
 
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
+import {shallow} from 'enzyme';
 import {expect} from 'chai';
 
 describe('Dropdown', function () {
-    var dropdownElement,
-        renderedDropdown;
+    let dropdownElement;
 
     beforeEach(function () {
-        var shallowRenderer;
-
-        dropdownElement = React.createElement(DropdownComponent);
-
-        shallowRenderer = ReactTestUtils.createRenderer();
-        shallowRenderer.render(dropdownElement);
-        renderedDropdown = shallowRenderer.getRenderOutput();
+        dropdownElement = shallow(<DropdownComponent />);
     });
 
     it('should be a div', function () {
-        expect(renderedDropdown.type).to.equal('div');
+        expect(dropdownElement.is('div')).to.equal(true);
     });
 
     it('should contain the button dropdown', function () {
-        var buttomDropdown = renderedDropdown.props.children;
+        const buttomDropdown = dropdownElement.find(ButtonDropdownComponent);
 
-        expect(buttomDropdown.type).to.equal(ButtonDropdownComponent);
+        expect(buttomDropdown).to.not.equal(undefined);
     });
 });
