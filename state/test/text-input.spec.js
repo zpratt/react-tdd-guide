@@ -14,4 +14,8 @@ describe('Stateful Text Input', function () {
         expect(textInput.type()).equals('input');
         expect(textInput.props().type).equals('text');
     });
+
+    it('should be empty by default', function () {
+        expect(textInput.props().value).equals('');
+    });
 });
