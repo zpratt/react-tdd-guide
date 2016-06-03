@@ -27,8 +27,9 @@ Looking at the history for each section will show you only the steps needed to d
 * [Basics](https://github.com/zpratt/react-tdd-guide/commits/master/basics) - Steps for TDD'ing the simplest of React components: An unordered list of items. Start here if you're not familiar with TDD'ing React and want to see a simple introduction.
   * [Running version](http://zpratt.github.io/react-tdd-guide/examples/basics/)
 * [Simple event handling](https://github.com/zpratt/react-tdd-guide/commits/master/event-handling) (WIP)
+* [Simple stateful input](https://github.com/zpratt/react-tdd-guide/tree/master/state)
 * Centralized state management techniques (not done)
-* Server interactions with Ampersand collections and models (not done)
+* Redux (not done)
 * React router (not done)
 
 ## Running the tests for a section
