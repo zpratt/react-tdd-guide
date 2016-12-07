@@ -4,9 +4,11 @@
   "description": "A guide on how to TDD React components",
   "main": "index.js",
   "scripts": {
-    "basics": "mocha */test",
+    "basics": "mocha basics/test",
+    "event-handling": "mocha event-handling/test",
+    "state": "mocha state/test",
     "lint": "eslint */lib/*.jsx */test/*.spec.js",
-    "test": "npm run lint && npm run basics"
+    "test": "npm run lint && mocha */test"
   },
   "repository": {
     "type": "git",
