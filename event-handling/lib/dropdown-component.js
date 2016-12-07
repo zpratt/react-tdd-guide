@@ -1,10 +1,14 @@
 import ButtonDropdown from './button-dropdown-component';
 import React from 'react';
 
-export default () => {
+function Dropdown() {
     return (
         <div>
-            <ButtonDropdown />
+            <ButtonDropdown/>
         </div>
     );
-};
+}
+
+Dropdown.displayName = 'Dropdown';
+
+export default Dropdown;

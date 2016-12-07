@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 function onChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({
+        value: event.target.value
+    });
 }
 
 export default class TextInput extends Component {
@@ -23,3 +25,5 @@ export default class TextInput extends Component {
         );
     }
 }
+
+TextInput.displayName = 'TextInput';
