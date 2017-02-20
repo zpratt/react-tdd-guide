@@ -23,12 +23,12 @@ describe('Stateful Text Input', function () {
     });
 
     it('should update its value when text is entered', function () {
-        const newInputText = chance.string(),
-            onChangeEvent = {
-                target: {
-                    value: newInputText
-                }
-            };
+        const newInputText = chance.string();
+        const onChangeEvent = {
+            target: {
+                value: newInputText
+            }
+        };
 
         textInput.simulate('change', onChangeEvent);
 

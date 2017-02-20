@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-export default props => {
+function ButtonDropdown(props) {
     return (
-        <button type='button' onClick={props.buttonSelected}/>
+        <button
+            onClick={props.buttonSelected}
+            type='button'
+        />
     );
+}
+
+ButtonDropdown.displayName = 'ButtonDropdown';
+ButtonDropdown.propTypes = {
+    buttonSelected: PropTypes.func
 };
+
+export default ButtonDropdown;

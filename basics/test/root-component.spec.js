@@ -3,17 +3,16 @@ import RootComponent from '../lib/root-component';
 import React from 'react';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
+import Chance from 'chance';
 
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+const chance = new Chance();
 
 function generateDummyItems(number) {
-    let items = [];
+    const items = [];
 
     for (let index = 0; index < number; index += 1) {
         items.push({
-            name: '' + randomInt(10, 50)
+            name: chance.name()
         });
     }
 
@@ -22,7 +21,7 @@ function generateDummyItems(number) {
 
 describe('Root Component', function () {
     describe('when the list is rendered with no users', function () {
-        var rootElement;
+        let rootElement;
 
         beforeEach(function () {
             rootElement = shallow(
@@ -44,7 +43,10 @@ describe('Root Component', function () {
             dummyUsers;
 
         beforeEach(function () {
-            expectedNumberOfItems = randomInt(20, 30);
+            expectedNumberOfItems = chance.integer({
+                max: 30,
+                min: 20
+            });
             dummyUsers = generateDummyItems(expectedNumberOfItems);
 
             rootElementWithItems = shallow(
@@ -62,7 +64,7 @@ describe('Root Component', function () {
 
         it('should key each element in the list', function () {
             listItems.forEach(function (listItemElement, index) {
-                let expectedKey = index.toString();
+                const expectedKey = index.toString();
 
                 expect(listItemElement.key()).to.equal(expectedKey);
             });
@@ -70,7 +72,7 @@ describe('Root Component', function () {
 
         it('should include the name of the user in each item', function () {
             listItems.forEach(function (listItemElement, index) {
-                let dummyUser = dummyUsers[index].name;
+                const dummyUser = dummyUsers[index].name;
 
                 expect(listItemElement.text()).to.equal(dummyUser);
             });

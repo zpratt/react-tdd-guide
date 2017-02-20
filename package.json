@@ -6,8 +6,8 @@
   "scripts": {
     "basics": "mocha basics/test",
     "event-handling": "mocha event-handling/test",
+    "lint": "eslint \"**/*.js\"",
     "state": "mocha state/test",
-    "lint": "eslint */lib/*.jsx */test/*.spec.js",
     "test": "npm run lint && mocha */test"
   },
   "repository": {
@@ -34,8 +34,8 @@
     "chai": "^2.2.0",
     "chance": "^1.0.3",
     "enzyme": "^2.3.0",
-    "eslint": "^2.10.2",
-    "eslint-plugin-react": "^5.1.1",
+    "eslint": "^3.11.1",
+    "eslint-config-rcoy-v": "^2.0.0",
     "mocha": "^2.3.4",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",

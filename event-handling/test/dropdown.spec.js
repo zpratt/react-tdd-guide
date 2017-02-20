@@ -9,7 +9,7 @@ describe('Dropdown', function () {
     let dropdownElement;
 
     beforeEach(function () {
-        dropdownElement = shallow(<DropdownComponent />);
+        dropdownElement = shallow(<DropdownComponent/>);
     });
 
     it('should be a div', function () {
