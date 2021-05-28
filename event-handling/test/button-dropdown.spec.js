@@ -1,7 +1,7 @@
 import ButtonDropdownComponent from '../lib/button-dropdown-component';
 import {expect, beforeEach, describe, it, jest} from '@jest/globals';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, cleanup, fireEvent} from '@testing-library/react';
 
 describe('Button Dropdown', function () {
     let buttonDropdownElement,
@@ -10,7 +10,7 @@ describe('Button Dropdown', function () {
     beforeEach(function () {
         parentEventHandler = jest.fn();
 
-        buttonDropdownElement = shallow(
+        buttonDropdownElement = render(
             <ButtonDropdownComponent
                 buttonSelected={parentEventHandler}
             />
@@ -19,16 +19,17 @@ describe('Button Dropdown', function () {
 
     afterEach(function () {
         jest.resetAllMocks();
+        cleanup();
     });
 
     it('should be a button', function () {
-        expect(buttonDropdownElement.is('button')).toEqual(true);
+        expect(buttonDropdownElement.getAllByRole('button')).toHaveLength(1);
     });
 
     it('should notify a consumer that the button was clicked', function () {
         expect(parentEventHandler).toHaveBeenCalledTimes(0);
 
-        buttonDropdownElement.simulate('click');
+        fireEvent.click(buttonDropdownElement.getByRole('button'));
 
         expect(parentEventHandler).toHaveBeenCalledTimes(1);
     });

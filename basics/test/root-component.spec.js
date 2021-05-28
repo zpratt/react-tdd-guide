@@ -1,7 +1,7 @@
 import RootComponent from '../lib/root-component';
 import {expect, beforeEach, describe, it} from '@jest/globals';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, cleanup} from '@testing-library/react';
 import Chance from 'chance';
 
 const chance = new Chance();
@@ -23,15 +23,19 @@ describe('Root Component', function () {
         let rootElement;
 
         beforeEach(function () {
-            rootElement = shallow(
+            rootElement = render(
                 <RootComponent
                     users={[]}
                 />
             );
         });
 
+        afterEach(() => {
+            cleanup();
+        });
+
         it('should be a unordered list', function () {
-            expect(rootElement.is('ul')).toEqual(true);
+            expect(rootElement.getAllByRole('list')).toHaveLength(1);
         });
     });
 
@@ -48,32 +52,24 @@ describe('Root Component', function () {
             });
             dummyUsers = generateDummyItems(expectedNumberOfItems);
 
-            rootElementWithItems = shallow(
+            rootElementWithItems = render(
                 <RootComponent
                     users={dummyUsers}
                 />
             );
 
-            listItems = rootElementWithItems.find('li');
+            listItems = rootElementWithItems.getAllByRole('listitem');
         });
 
         it('should render an LI for each of the items', function () {
             expect(listItems).toHaveLength(expectedNumberOfItems);
         });
 
-        it('should key each element in the list', function () {
-            listItems.forEach(function (listItemElement, index) {
-                const expectedKey = index.toString();
-
-                expect(listItemElement.key()).toEqual(expectedKey);
-            });
-        });
-
         it('should include the name of the user in each item', function () {
             listItems.forEach(function (listItemElement, index) {
                 const dummyUser = dummyUsers[index].name;
 
-                expect(listItemElement.text()).toEqual(dummyUser);
+                expect(listItemElement.textContent).toEqual(dummyUser);
             });
         });
     });

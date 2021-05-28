@@ -19,6 +19,9 @@
     "tdd",
     "guide"
   ],
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "author": "zach pratt <zach@modzed.io> (https://zpratt.github.io/)",
   "license": "MIT",
   "bugs": {
@@ -31,12 +34,12 @@
     "@babel/preset-env": "7.14.2",
     "@babel/preset-react": "7.13.13",
     "@jest/globals": "^27.0.1",
-    "chance": "^1.0.3",
-    "enzyme": "^2.3.0",
+    "@testing-library/react": "^11.2.7",
+    "chance": "^1.1.7",
     "eslint": "^3.11.1",
     "eslint-config-rcoy-v": "^2.0.0",
     "jest": "^27.0.1",
-    "react-addons-test-utils": "^15.1.0",
+    "prop-types": "^15.7.2",
     "react-dom": "^15.1.0"
   },
   "dependencies": {
