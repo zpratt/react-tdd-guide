@@ -1,19 +1,14 @@
 import ButtonDropdownComponent from '../lib/button-dropdown-component';
-
+import {expect, beforeEach, describe, it, jest} from '@jest/globals';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
-import sinon from 'sinon';
 
 describe('Button Dropdown', function () {
     let buttonDropdownElement,
-        parentEventHandler,
-
-        sandbox;
+        parentEventHandler;
 
     beforeEach(function () {
-        sandbox = sinon.sandbox.create();
-        parentEventHandler = sandbox.stub();
+        parentEventHandler = jest.fn();
 
         buttonDropdownElement = shallow(
             <ButtonDropdownComponent
@@ -23,18 +18,18 @@ describe('Button Dropdown', function () {
     });
 
     afterEach(function () {
-        sandbox.restore();
+        jest.resetAllMocks();
     });
 
     it('should be a button', function () {
-        expect(buttonDropdownElement.is('button')).to.equal(true);
+        expect(buttonDropdownElement.is('button')).toEqual(true);
     });
 
     it('should notify a consumer that the button was clicked', function () {
-        sinon.assert.notCalled(parentEventHandler);
+        expect(parentEventHandler).toHaveBeenCalledTimes(0);
 
         buttonDropdownElement.simulate('click');
 
-        sinon.assert.calledOnce(parentEventHandler);
+        expect(parentEventHandler).toHaveBeenCalledTimes(1);
     });
 });

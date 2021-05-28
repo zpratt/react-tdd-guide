@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
+import {expect, beforeEach, describe, it} from '@jest/globals';
 import Chance from 'chance';
 import TextInput from '../lib/text-input';
 
@@ -14,12 +14,12 @@ describe('Stateful Text Input', function () {
     });
 
     it('should be a text input', function () {
-        expect(textInput.type()).equals('input');
-        expect(textInput.props().type).equals('text');
+        expect(textInput.type()).toEqual('input');
+        expect(textInput.props().type).toEqual('text');
     });
 
     it('should be empty by default', function () {
-        expect(textInput.props().value).equals('');
+        expect(textInput.props().value).toEqual('');
     });
 
     it('should update its value when text is entered', function () {
@@ -32,6 +32,6 @@ describe('Stateful Text Input', function () {
 
         textInput.simulate('change', onChangeEvent);
 
-        expect(textInput.props().value).equals(newInputText);
+        expect(textInput.props().value).toEqual(newInputText);
     });
 });

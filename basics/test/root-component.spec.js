@@ -1,8 +1,7 @@
 import RootComponent from '../lib/root-component';
-
+import {expect, beforeEach, describe, it} from '@jest/globals';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import Chance from 'chance';
 
 const chance = new Chance();
@@ -32,7 +31,7 @@ describe('Root Component', function () {
         });
 
         it('should be a unordered list', function () {
-            expect(rootElement.is('ul')).to.equal(true);
+            expect(rootElement.is('ul')).toEqual(true);
         });
     });
 
@@ -59,14 +58,14 @@ describe('Root Component', function () {
         });
 
         it('should render an LI for each of the items', function () {
-            expect(listItems).to.have.length(expectedNumberOfItems);
+            expect(listItems).toHaveLength(expectedNumberOfItems);
         });
 
         it('should key each element in the list', function () {
             listItems.forEach(function (listItemElement, index) {
                 const expectedKey = index.toString();
 
-                expect(listItemElement.key()).to.equal(expectedKey);
+                expect(listItemElement.key()).toEqual(expectedKey);
             });
         });
 
@@ -74,7 +73,7 @@ describe('Root Component', function () {
             listItems.forEach(function (listItemElement, index) {
                 const dummyUser = dummyUsers[index].name;
 
-                expect(listItemElement.text()).to.equal(dummyUser);
+                expect(listItemElement.text()).toEqual(dummyUser);
             });
         });
     });
