@@ -1,29 +1,19 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 
-function onChange(event) {
-    this.setState({
-        value: event.target.value
-    });
-}
+export const TextInput = () => {
+    const [value, setValue] = useState('');
 
-export default class TextInput extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            value: ''
-        };
+    function onChange(event) {
+        setValue(event.target.value);
     }
 
-    render() {
-        return (
-            <input
-                onChange={onChange.bind(this)}
-                type='text'
-                value={this.state.value}
-            />
-        );
-    }
-}
+    return (
+        <input
+            onChange={onChange}
+            type='text'
+            value={value}
+        />
+    );
+};
 
 TextInput.displayName = 'TextInput';
