@@ -1,8 +1,8 @@
+import TextInput from '../lib/text-input';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, cleanup, fireEvent} from '@testing-library/react';
 import {expect, beforeEach, describe, it} from '@jest/globals';
 import Chance from 'chance';
-import TextInput from '../lib/text-input';
 
 describe('Stateful Text Input', function () {
     let textInput,
@@ -10,16 +10,21 @@ describe('Stateful Text Input', function () {
 
     beforeEach(function () {
         chance = new Chance();
-        textInput = shallow(<TextInput/>);
+        textInput = render(<TextInput/>, {
+            container: document.body.appendChild(document.createElement('form'))
+        });
+    });
+
+    afterEach(() => {
+        cleanup();
     });
 
     it('should be a text input', function () {
-        expect(textInput.type()).toEqual('input');
-        expect(textInput.props().type).toEqual('text');
+        expect(textInput.getByRole('textbox')).toBeDefined();
     });
 
     it('should be empty by default', function () {
-        expect(textInput.props().value).toEqual('');
+        expect(textInput.getByRole('textbox').value).toEqual('');
     });
 
     it('should update its value when text is entered', function () {
@@ -30,8 +35,8 @@ describe('Stateful Text Input', function () {
             }
         };
 
-        textInput.simulate('change', onChangeEvent);
+        fireEvent.change(textInput.getByRole('textbox'), onChangeEvent);
 
-        expect(textInput.props().value).toEqual(newInputText);
+        expect(textInput.getByRole('textbox').value).toEqual(newInputText);
     });
 });

@@ -1,23 +1,29 @@
 import DropdownComponent from '../lib/dropdown-component';
-import ButtonDropdownComponent from '../lib/button-dropdown-component';
-import {expect, beforeEach, describe, it} from '@jest/globals';
+import {expect, beforeEach, describe, it, jest} from '@jest/globals';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render, cleanup} from '@testing-library/react';
+
+jest.mock('../lib/button-dropdown-component', () => {
+    // eslint-disable-next-line react/display-name
+    const MockButtonDropdown = () => (
+        <button/>
+    );
+
+    return MockButtonDropdown;
+});
 
 describe('Dropdown', function () {
-    let dropdownElement;
-
     beforeEach(function () {
-        dropdownElement = shallow(<DropdownComponent/>);
+        render(<DropdownComponent/>);
     });
 
-    it('should be a div', function () {
-        expect(dropdownElement.is('div')).toEqual(true);
+    afterEach(() => {
+        cleanup();
     });
 
     it('should contain the button dropdown', function () {
-        const buttomDropdown = dropdownElement.find(ButtonDropdownComponent);
+        const buttonEl = document.querySelectorAll('div > button');
 
-        expect(buttomDropdown).not.toEqual(undefined);
+        expect(buttonEl).toHaveLength(1);
     });
 });
