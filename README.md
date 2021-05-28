@@ -20,7 +20,7 @@ Looking at the history for each section will show you only the steps needed to d
 ## Philosophy
 
 * Avoid the need for runners and browsers
-  * Achieved by using mocha and [enzyme](http://airbnb.io/enzyme/docs/api/shallow.html)
+  * Achieved by using jest and [react-testing-library](https://testing-library.com/docs/react-testing-library/intro)
 
 ## Table of Contents
 
