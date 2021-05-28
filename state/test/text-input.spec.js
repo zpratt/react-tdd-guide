@@ -1,4 +1,4 @@
-import TextInput from '../lib/text-input';
+import {TextInput} from '../lib/text-input';
 import React from 'react';
 import {render, cleanup, fireEvent} from '@testing-library/react';
 import {expect, beforeEach, describe, it} from '@jest/globals';
